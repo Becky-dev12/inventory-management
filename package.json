@@ -6,12 +6,17 @@
   "scripts": {
     "install:all": "npm install --prefix server && npm install --prefix client",
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+
     "server": "npm run dev --prefix server",
     "client": "npm run dev --prefix client",
-    "seed": "npm run seed --prefix server",
-    "build": "npm run build --prefix client"
+
+    "build": "npm run build --prefix client",
+
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d client/dist"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "gh-pages": "^6.3.0"
   }
 }
