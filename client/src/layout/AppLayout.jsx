@@ -1,4 +1,5 @@
-import { BarChart3, Boxes, LayoutDashboard, Moon, ReceiptText, Sun } from 'lucide-react';
+ import React from 'react';
+ import { BarChart3, Boxes, LayoutDashboard, Moon, ReceiptText, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 

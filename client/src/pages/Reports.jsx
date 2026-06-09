@@ -1,3 +1,4 @@
+import React from 'react';
 import { AlertCircle, BarChart3, Boxes, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import EmptyState from '../components/EmptyState.jsx';

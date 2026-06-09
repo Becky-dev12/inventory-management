@@ -1,3 +1,4 @@
+import React from 'react';
 import { AlertTriangle, Banknote, Boxes, ChartNoAxesColumnIncreasing, PackageCheck, TrendingUp } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import EmptyState from '../components/EmptyState.jsx';

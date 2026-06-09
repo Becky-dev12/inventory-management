@@ -1,53 +1,61 @@
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
-  timeout: 5000
+  baseURL: API_BASE_URL,
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
-export async function fetchSummary() {
+// ===================== REPORTS =====================
+export const fetchSummary = async () => {
   const { data } = await api.get('/reports/summary');
   return data;
-}
+};
 
-export async function fetchAnalytics() {
+export const fetchAnalytics = async () => {
   const { data } = await api.get('/reports/analytics');
   return data;
-}
+};
 
-export async function fetchProducts(params = {}) {
+// ===================== PRODUCTS =====================
+export const fetchProducts = async (params = {}) => {
   const { data } = await api.get('/products', { params });
   return data;
-}
+};
 
-export async function createProduct(product) {
+export const createProduct = async (product) => {
   const { data } = await api.post('/products', product);
   return data;
-}
+};
 
-export async function updateProduct(id, product) {
+export const updateProduct = async (id, product) => {
   const { data } = await api.put(`/products/${id}`, product);
   return data;
-}
+};
 
-export async function deleteProduct(id) {
+export const deleteProduct = async (id) => {
   const { data } = await api.delete(`/products/${id}`);
   return data;
-}
+};
 
-export async function adjustStock(id, payload) {
+export const adjustStock = async (id, payload) => {
   const { data } = await api.patch(`/products/${id}/stock`, payload);
   return data;
-}
+};
 
-export async function fetchSales() {
+// ===================== SALES =====================
+export const fetchSales = async () => {
   const { data } = await api.get('/sales');
   return data;
-}
+};
 
-export async function createSale(sale) {
+export const createSale = async (sale) => {
   const { data } = await api.post('/sales', sale);
   return data;
-}
+};
 
 export default api;
