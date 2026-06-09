@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // OPTION A: Hardcode your live backend URL (Easiest way to make it work right now)
 // Make sure to replace this URL with your actual live Render or Railway backend link!
-const API_BASE_URL = 'https://inventory-management-nh56.onrender.com'; 
+const API_BASE_URL = 'https://inventory-management-nh56.onrender.com/api'; 
 
 // OPTION B: Smart fallback (Uncomment this later if you want it to automatically switch between local and production)
 // const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
